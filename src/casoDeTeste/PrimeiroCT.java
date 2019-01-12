@@ -15,8 +15,13 @@ public class PrimeiroCT {
 		//Esta linha é responsavel por redirecionar para o site do github
 		driver.get("https://github.com/login");
 		// Esta linha identifica o elemento que iremos realizar inserção, além de realizar a inserção também.
-		driver.findElement(By.id("login_field")).sendKeys("meuusuario");
+		/*driver.findElement(By.id("login_field")).sendKeys("meuusuario");
 		driver.findElement(By.id("password")).sendKeys("minhasenha");
-		driver.findElement(By.name("commit")).click();
+		driver.findElement(By.name("commit")).click();*/
+		System.out.println(driver.getTitle());
+		driver.navigate().refresh();		
+		driver.findElement(By.linkText("Terms")).click();
+		driver.navigate().back();
+		driver.quit();
 	}
 }
